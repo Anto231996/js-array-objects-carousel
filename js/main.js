@@ -88,7 +88,27 @@ nextButton.addEventListener('click', function(){
     } else {
         itemActive++;
     }
+
     document.getElementsByClassName("items-city")[itemActive].classList.add("active");
 
     document.getElementsByClassName("thumbnail-city")[itemActive].classList.add("active");
 })
+
+
+setInterval (myfunction, 3000);
+
+function myfunction(){
+    document.getElementsByClassName("items-city")[itemActive].classList.remove("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.remove("active");
+
+    if( itemActive === city.length - 1){
+        itemActive = 0;
+    } else {
+        itemActive++;
+    }
+
+    document.getElementsByClassName("items-city")[itemActive].classList.add("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.add("active");
+}
