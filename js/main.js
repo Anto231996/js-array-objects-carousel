@@ -48,4 +48,47 @@ const itemsCityElement = document.querySelector(".my-carousel-images");
 itemsCityElement.innerHTML = itemsCityContent;
 
 const thumbnailsCityElement = document.querySelector(".my-thumbnails");
-thumbnailsCityElement.innerHTML = thumbnailsCityContent;
+thumbnailsCityElement.innerHTML += thumbnailsCityContent;
+
+
+let itemActive = 0;
+
+document.getElementsByClassName("items-city")[itemActive].classList.add("active");
+
+document.getElementsByClassName("thumbnail-city")[itemActive].classList.add("active");
+
+
+const previousButton = document.querySelector(".my-previous");
+
+previousButton.addEventListener('click', function(){
+    document.getElementsByClassName("items-city")[itemActive].classList.remove("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.remove("active");
+
+    if( itemActive === 0){
+        itemActive = city.length - 1;
+    } else {
+        itemActive--;
+    }
+
+    document.getElementsByClassName("items-city")[itemActive].classList.add("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.add("active");
+})
+
+const nextButton = document.querySelector(".my-next");
+
+nextButton.addEventListener('click', function(){
+    document.getElementsByClassName("items-city")[itemActive].classList.remove("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.remove("active");
+
+    if( itemActive === city.length - 1){
+        itemActive = 0;
+    } else {
+        itemActive++;
+    }
+    document.getElementsByClassName("items-city")[itemActive].classList.add("active");
+
+    document.getElementsByClassName("thumbnail-city")[itemActive].classList.add("active");
+})

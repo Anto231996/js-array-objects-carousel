@@ -1,5 +1,6 @@
 body{
     font-family: "Montserrat", sans-serif;
+    background-color: gainsboro;
 }
 
 img{
@@ -13,17 +14,17 @@ div.row{
 
 div.my-carousel-container{
     min-height: 700px;
-    min-width: 800px ;
+    min-width: 800px;
+    max-height: 800px;
 }
 
 div.my-carousel-images{
-    min-height: 550px;
-    background-color: aquamarine;
+    min-height: 540px;
 }
 
 div.my-carousel-images .items-city{
-    width: 100%;
     position: relative;
+    border: 1px solid black;
     display: none;
 }
 
@@ -33,18 +34,21 @@ div.my-carousel-images .items-city.active{
 
 div.city-description{
     position: absolute;
-    top: 80%;
-    right: 5%;
+    top: 3%;
+    right: 3%;
 }
 
 div.my-thumbnails{
     display: flex;
-    background-color: violet;
-    min-height: 150px;
 }
 
 div.my-thumbnails .thumbnail-city{
     border: 1px solid black;
+    filter: brightness(.6);
+}
+
+div.my-thumbnails .thumbnail-city.active{
+    filter: brightness(1);
 }
 
 div.my-previous,
@@ -71,13 +75,13 @@ div.my-next{
 div.my-previous > span::after{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f7fb";
+    content: "\f104";
     line-height: 30px;
 }
 
 div.my-next > span::after{
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f520";
+    content: "\f105";
     line-height: 30px;
 }
