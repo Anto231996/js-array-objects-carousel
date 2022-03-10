@@ -2,20 +2,49 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 
+img{
+    width: 100%;
+}
+
+div.row{
+    width: 1200px;
+    margin: 0 auto;
+}
+
 div.my-carousel-container{
     min-height: 700px;
-    min-width:800px ;
-    background-color: aquamarine;
+    min-width: 800px ;
 }
 
 div.my-carousel-images{
-    background-color: cadetblue;
-    min-height: 540px;
+    min-height: 550px;
+    background-color: aquamarine;
+}
+
+div.my-carousel-images .items-city{
+    width: 100%;
+    position: relative;
+    display: none;
+}
+
+div.my-carousel-images .items-city.active{
+    display: block;
+}
+
+div.city-description{
+    position: absolute;
+    top: 80%;
+    right: 5%;
 }
 
 div.my-thumbnails{
+    display: flex;
     background-color: violet;
-    min-height: 160px;
+    min-height: 150px;
+}
+
+div.my-thumbnails .thumbnail-city{
+    border: 1px solid black;
 }
 
 div.my-previous,

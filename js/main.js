@@ -1,18 +1,51 @@
-/**
- *
- *
- *
-Riprendiamo l'esercizio carosello e rifacciamolo, questa volta usando gli oggetti, prendendo come riferimento il codice scritto oggi insieme a lezione, che troverete direttamente nella mia repository di github a questo link: [link github]
+const city = [
+    {
+        nameCity: 'Antarctica',
+        image: 'Antarctica.jpg',
+    },
+    {
+        nameCity: 'Antelope Canyon, Arizona',
+        image: 'Antelope-Canyon-Arizona.jpg',
+    },
+    {
+        nameCity: 'Faroe Islands',
+        image: 'Faroe-Islands.jpg',
+    },
+    {
+        nameCity: 'Machu Picchu, Peru',
+        image: 'Machu-Picchu-Peru.jpg',
+    },
+    {
+        nameCity: 'Reynisfjara, Iceland',
+        image: 'Reynisfjara-Iceland.jpg',
+    }
+];
 
-Modifichiamo il codice dell'esercizio per renderlo funzionante con un array di oggetti al posto dei tre array separati, con una sola regola: non è possibile modificare l'HTML ma solamente JS e CSS.
-Ricordiamo sempre l'importanza dell'integrità del dato.
+let itemsCityContent = "";
 
-Bonus 1:
-Sperimentiamo attraverso l'uso delle timing functions anche una funzionalità di scorrimento al nostro carosello:
-al click di un bottone o già dall'inizio possiamo far partire, ad intervalli di tempo a piacere, lo scorrimento delle immagini disponibili nel carosello stesso.
+let thumbnailsCityContent = "";
 
-Bonus 2:
-E se volessi un bottone per invertire la "direzione" del carosello?
+    for (let i = 0; i < city.length; i++){
+        itemsCityContent += 
+        `
+        <div class="items-city">
+            <img src="img/${city[i].image}" alt="${city[i].nameCity}">
+            <div class="city-description">
+                <h1>${city[i].nameCity}</h1>
+            </div>
+        </div>
+        `;
 
- *
- */
+        thumbnailsCityContent += 
+        `
+        <div class="thumbnail-city">
+            <img src="img/${city[i].image}" alt="${city[i].nameCity}">
+        </div>
+        `;
+}
+
+const itemsCityElement = document.querySelector(".my-carousel-images");
+itemsCityElement.innerHTML = itemsCityContent;
+
+const thumbnailsCityElement = document.querySelector(".my-thumbnails");
+thumbnailsCityElement.innerHTML = thumbnailsCityContent;
